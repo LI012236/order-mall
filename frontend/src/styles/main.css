@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  background: #f5f7fa;
+  color: #303133;
+}
+
+.header {
+  height: 56px;
+  background: #1f3864;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 24px;
+}
+
+.header .logo {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.header .nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.header .nav a {
+  color: #c9d6ea;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header .nav a.router-link-active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.header .user {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .user a {
+  color: #c9d6ea;
+  text-decoration: none;
+}
+
+.main {
+  max-width: 1180px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid #ebeef5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  min-height: 22px;
+  margin-bottom: 2px;
+}
+
+.product-meta {
+  color: #909399;
+  font-size: 12px;
+}
+
+.product-price {
+  color: #e6a23c;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.price {
+  color: #e6a23c;
+  font-weight: 600;
+}
+
+.text-muted {
+  color: #909399;
+  font-size: 12px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.empty {
+  text-align: center;
+  color: #909399;
+  padding: 40px 0;
+}
+
+.login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 56px);
+}
+
+.login-card {
+  width: 380px;
+}
