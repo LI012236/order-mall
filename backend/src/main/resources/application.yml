@@ -7,8 +7,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/mall_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=utf8
-    username: root
-    password: "123456"
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:123456}
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
@@ -21,6 +21,15 @@ spring:
   jackson:
     property-naming-strategy: SNAKE_CASE
     default-property-inclusion: always
+
+# 在线接口文档：http://127.0.0.1:18091/swagger-ui.html
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs
 
 logging:
   level:

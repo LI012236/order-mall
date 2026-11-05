@@ -1,12 +1,15 @@
 # order-mall · 订单商城
 
+![build](https://github.com/LI012236/order-mall/actions/workflows/ci.yml/badge.svg)
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 Spring Boot + MySQL + Vue 3 的全栈订单系统，用于 Java 后端求职作品展示。
 
 > 状态：全部完成（M1–M8）。后端 24 个接口、前端 5 个页面、接口文档、压测报告、部署说明齐备。
 
 ## 技术栈
 
-后端：Spring Boot 3.2.5 · JDK 17 · Spring JDBC（JdbcTemplate）· MySQL 8 · Maven
+后端：Spring Boot 3.2.5 · JDK 17 · Spring JDBC（JdbcTemplate）· MySQL 8 · springdoc-openapi · Maven
 前端：Vue 3 · Vite · Element Plus · Axios · Vue Router
 
 ## 页面预览
@@ -54,7 +57,7 @@ order-mall/
 ### 1. 后端
 
 ```powershell
-cd B:\dshWork\02-测试项目\order-mall\backend
+cd B:\dshWork\02-编程项目\order-mall\backend
 mvn -DskipTests package
 java '-Dfile.encoding=UTF-8' -jar target\order-mall.jar
 ```
@@ -65,10 +68,17 @@ java '-Dfile.encoding=UTF-8' -jar target\order-mall.jar
 
 数据库 `mall_db` 会自动创建，表结构见 `schema.sql`。
 
+> 数据库账号密码默认 `root / 123456`（仅本地演示）。如需修改，用环境变量覆盖，不必改代码：
+>
+> ```powershell
+> $env:DB_USER="root"; $env:DB_PASSWORD="你的密码"
+> java '-Dfile.encoding=UTF-8' -jar target\order-mall.jar
+> ```
+
 ### 2. 前端
 
 ```powershell
-cd B:\dshWork\02-测试项目\order-mall\frontend
+cd B:\dshWork\02-编程项目\order-mall\frontend
 npm install          # 首次执行，约 1 分钟
 npm run dev          # 打开 http://localhost:5173
 ```
@@ -175,6 +185,7 @@ UPDATE orders SET status='PAID', paid_at=NOW() WHERE id=? AND status='CREATED'
 
 ## 文档
 
+- [在线接口文档（Swagger UI）](http://127.0.0.1:18091/swagger-ui.html)：启动后可直接调试，右上角 Authorize 填 token
 - [接口文档](docs/接口文档.md)：24 个接口的入参、出参、错误码
 - [性能测试](docs/性能测试.md)：三个场景的压测数据与瓶颈分析
 - [部署说明](docs/部署说明.md)：打包、Nginx 配置、检查清单
@@ -199,3 +210,7 @@ UPDATE orders SET status='PAID', paid_at=NOW() WHERE id=? AND status='CREATED'
 - [x] M6 订单状态机 + 模拟支付 + 后台发货
 - [x] M7 前端 5 个页面 + 联调
 - [x] M8 接口文档 + 压测报告 + 部署说明
+
+## 开源协议
+
+[MIT License](LICENSE) © 2026 何杰
